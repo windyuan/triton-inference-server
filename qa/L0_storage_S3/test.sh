@@ -123,7 +123,7 @@ for MAYBE_SLASH in "" "/"; do
     cp -r /data/inferenceserver/${REPO_VERSION}/qa_model_repository/*_object_object_object/ models/
     rm -rf models/*nobatch*
 
-    for FW in graphdef savedmodel netdef onnx libtorch plan; do
+    for FW in graphdef savedmodel netdef onnx libtorch plan custom; do
         for MC in `ls models/${FW}*/config.pbtxt`; do
             echo "instance_group [ { kind: ${KIND} }]" >> $MC
         done
